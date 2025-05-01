@@ -1,0 +1,211 @@
+/* Box sizing and global resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS Variables for better maintainability */
+:root {
+  --color-bg-dark: #101B17;
+  --color-primary: #0084ff;
+  --color-white: #ffffff;
+  --color-gray: #aaa;
+  --color-error: #eb4034;
+  --color-table-header: #1c2d3c;
+  --shadow-light: 0 2px 8px rgba(255, 255, 255, 0.3);
+  --shadow-dark: 0 0 10px rgba(0, 0, 0, 0.3);
+  --border-radius: 5px;
+  --font-main: serif;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-white);
+  overflow-x: hidden;
+  background-color: var(--color-bg-dark);
+}
+
+/* Login Page Styles */
+.background_container_login {
+  background: var(--color-bg-dark) url("https://img.freepik.com/free-vector/office-management-concept-illustration_114360-8811.jpg?ga=GA1.1.868031715.1746094093&semt=ais_hybrid&w=740") no-repeat center;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  height: 100vh;
+  padding-top: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  max-width: 400px;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: var(--shadow-light);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(3px);
+}
+
+section h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--color-white);
+}
+
+/* Form Inputs */
+.form {
+  margin-top: 20px;
+}
+
+.input_container {
+  margin-top: 15px;
+  position: relative;
+}
+
+.input_container input {
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-gray);
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+.input_container input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 8px var(--color-white);
+  outline: none;
+}
+
+.input_container label {
+  color: var(--color-white);
+  font-weight: bold;
+}
+
+.show_password {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  font-size: 18px;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+/* Button Styles */
+.btn_container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: rgba(0, 128, 0, 0.7);
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 5px var(--color-white);
+}
+
+/* Error message */
+.error {
+  text-align: center;
+  color: var(--color-error);
+  margin-top: 10px;
+}
+
+/* Table Styles */
+table {
+  width: 95%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  color: black;
+  box-shadow: var(--shadow-dark);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid var(--color-bg-dark);
+  text-align: center;
+  font-size: 16px;
+}
+
+th {
+  background-color: var(--color-table-header);
+  color: var(--color-white);
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+tr:hover {
+  background-color: #e6e6e6;
+}
+
+/* Responsive Table Styles */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    margin-bottom: 15px;
+  }
+
+  td {
+    padding-left: 50%;
+    position: relative;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  td:before {
+    content: attr(data-column);
+    position: absolute;
+    left: 15px;
+    font-weight: bold;
+    color: #555;
+  }
+}
+
+/* Error Page */
+.error-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: var(--color-bg-dark);
+}
+
+/* Responsive Login Section */
+@media (max-width: 768px) {
+  section {
+    max-width: 90%;
+    padding: 15px;
+    margin-top: 5vh;
+  }
+
+  .background_container_login {
+    padding-top: 20px;
+  }
+}
